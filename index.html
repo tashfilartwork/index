@@ -115,11 +115,17 @@ body > .page::before{
   margin:0 0 7px;font-size:10px;letter-spacing:.3em;font-weight:700;color:var(--gold-light);
 }
 h1{
-  margin:0;font-size:38px;line-height:1.12;font-weight:800;letter-spacing:.01em;
-  text-shadow:0 4px 20px rgba(0,0,0,.25);
+  margin:0;
+  font-size:40px;
+  line-height:1.12;
+  font-weight:950;
+  letter-spacing:.01em;
+  color:#f7d86a;
+  text-shadow:0 2px 0 rgba(125,79,8,.55),0 6px 22px rgba(0,0,0,.34),0 0 18px rgba(247,216,106,.16);
+  animation:nameGlow 2.8s ease-in-out infinite;
 }
 .subtitle{margin:9px 0 22px;color:rgba(255,255,255,.66);font-size:12px;letter-spacing:.12em}
-.actions{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:12px}
+.actions{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:30px;margin-bottom:12px}
 .primary-action,.contact-button,.detail-row,.social-card{
   -webkit-tap-highlight-color:transparent;
 }
@@ -183,6 +189,16 @@ h1{
 .ambient{position:fixed;border-radius:50%;filter:blur(70px);opacity:.16;pointer-events:none}
 .ambient-a{width:230px;height:230px;background:#d8a92e;top:8%;left:-100px;animation:floatA 10s ease-in-out infinite}
 .ambient-b{width:260px;height:260px;background:#1cc56b;bottom:4%;right:-120px;animation:floatB 12s ease-in-out infinite}
+@keyframes nameGlow{
+  0%,100%{
+    transform:translateY(0) scale(1);
+    text-shadow:0 2px 0 rgba(125,79,8,.55),0 6px 22px rgba(0,0,0,.34),0 0 14px rgba(247,216,106,.12);
+  }
+  50%{
+    transform:translateY(-2px) scale(1.025);
+    text-shadow:0 2px 0 rgba(125,79,8,.55),0 8px 28px rgba(0,0,0,.36),0 0 28px rgba(247,216,106,.38);
+  }
+}
 @keyframes cardIn{from{opacity:0;transform:translateY(26px) scale(.97)}to{opacity:1;transform:none}}
 @keyframes photoIn{from{opacity:0;transform:scale(.75)}to{opacity:1;transform:scale(1)}}
 @keyframes spin{to{transform:rotate(360deg)}}
@@ -279,9 +295,7 @@ h1{
           <span>TikTok</span>
         </a>
       </div>
-
-      <p class="footer-note">Tap any button to connect instantly</p>
-    </section>
+</section>
   </main>
 
   <div class="toast" id="toast" role="status" aria-live="polite">تمت إضافة جهة الاتصال</div>
